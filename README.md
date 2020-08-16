@@ -3,6 +3,8 @@
 The idea of this project is to have a POC for a Django web app.
 I guess this is only for the back-end.
 
+To start the project for the first time execute `docker-compose build` and then `docker-compose up`.
+
 To start the project just run `docker-compose up` inside this directory or `docker-compose up -d` to run the containers in the background.
 
 To stop the containers just run `docker-compose stop` inside this directory.
