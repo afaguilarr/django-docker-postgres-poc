@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "d4a8af33-5a42-44d2-bc01-8adac392fdf4",
+		"name": "Django_Docker_POC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Basic GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/helloWorld/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"helloWorld",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basic POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"world\": \"Mordor\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/helloWorld/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"helloWorld",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/world/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"world",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List GET restricted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/world?galaxy=SomeGalaxy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"world"
+					],
+					"query": [
+						{
+							"key": "galaxy",
+							"value": "SomeGalaxy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/world/someName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"world",
+						"someName"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/world/Tokitos Goblins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"world",
+						"Tokitos Goblins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/world/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"world",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creation POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Tokitos Goblins\",\n\t\"species\": \"Goblins\",\n\t\"galaxy\": \"Tokitos\",\n\t\"gas\": true,\n\t\"population\": 1000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/world/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"world",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Tokitos Goblins\",\n\t\"species\": \"Goblins\",\n\t\"galaxy\": \"Tarara\",\n\t\"gas\": true,\n\t\"population\": 1000000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/world/Tokitos Goblins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"world",
+						"Tokitos Goblins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail PUT Failing (trying patch)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Tokitos Goblins\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/world/Tokitos Goblins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"world",
+						"Tokitos Goblins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"species\": \"Somtin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/world/Tokitos Goblins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"world",
+						"Tokitos Goblins"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

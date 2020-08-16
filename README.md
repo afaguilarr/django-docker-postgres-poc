@@ -24,3 +24,7 @@ To connect to the postgres database use `sudo docker-compose run psql`.
 To change the database, add/ change the models in `models.py` and execute the `sudo docker-compose run web python manage.py makemigrations hello_world` command, the next time you start the containers, the migration will be applied.
 
 And that's it.
+
+### Test
+
+To test this API you can use the postman collection Django_Docker_POC.postman_collection.json
