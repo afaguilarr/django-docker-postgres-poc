@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    hostname: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data=/var/lib/postgresql/data/
+
+
+  psql:
+    image: postgres
+    links:
+      - postgres
+    command: 'sh -c ''exec psql -h "postgres" -p "5432" -U postgres'''
+
+
+  web:
+    build: .
+    command: bash -c "python manage.py migrate hello_world && python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
