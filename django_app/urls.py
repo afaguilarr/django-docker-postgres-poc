@@ -20,6 +20,7 @@ from django.urls import path
 from hello_world import views
 
 urlpatterns = [
+    path('', views.FirstView.as_view()),
     path('admin/', admin.site.urls),
     path('helloWorld/', views.HelloWorld.as_view()),
     path('world/', views.WorldView.as_view()),

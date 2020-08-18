@@ -5,9 +5,20 @@ from rest_framework import status
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.shortcuts import render
 
 from hello_world.models import World
 from hello_world.serializers import WorldSerializer
+
+
+class FirstView(APIView):
+    """
+    Example html rendering
+    """
+
+    def get(self, request):
+        context = {"items": World.objects.all()}
+        return render(request, 'login.html', context)
 
 
 class HelloWorld(APIView):
